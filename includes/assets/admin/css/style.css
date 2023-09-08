@@ -117,8 +117,7 @@
 }
 @media (max-width: 768px) {
   .carsharing__orders {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    display: block;
   }
 }
 .carsharing__orders #add-order {
@@ -197,7 +196,7 @@
     margin-bottom: 10px;
   }
   .order:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0px;
   }
 }
 .order__left {
@@ -333,8 +332,7 @@
 }
 @media (max-width: 768px) {
   .latest__body {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    display: block;
   }
 }
 
@@ -352,6 +350,14 @@
 @media (max-width: 425px) {
   .latest-order {
     display: block;
+  }
+}
+@media (max-width: 768px) {
+  .latest-order {
+    margin-bottom: 10px;
+  }
+  .latest-order:last-child {
+    margin-bottom: 0px;
   }
 }
 .latest-order__left {

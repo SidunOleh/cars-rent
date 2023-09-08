@@ -87,7 +87,7 @@ $gray: #F5F5F5;
             grid-template-columns: 1fr 1fr;
         }
         @media (max-width: 768px) {
-            grid-template-columns: 1fr;
+            display: block;
         }
         #add-order {
             display: flex;
@@ -148,7 +148,7 @@ $gray: #F5F5F5;
     @media (max-width: 768px) {
         margin-bottom: 10px;
         &:last-child {
-            margin-bottom: 0;
+            margin-bottom: 0px;
         }
     }
     &__left {
@@ -267,7 +267,7 @@ $gray: #F5F5F5;
             grid-template-columns: 1fr 1fr;
         }
         @media (max-width: 768px) {
-            grid-template-columns: 1fr;
+            display: block;
         }
     }
 }
@@ -283,6 +283,12 @@ $gray: #F5F5F5;
     background-color: $white;
     font-size: 15px;
     position: relative;
+    @media (max-width: 768px) {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
     &__left {
         width: 30%;
         flex-shrink: 0;
