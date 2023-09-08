@@ -96,7 +96,7 @@
                     <?php _e( 'Contacts' ) ?>
                 </div>
 
-                <div class="settings__content accordion__content show">
+                <div class="settings__content accordion__content">
 
                     <div class="setting">
                         <label for="notification-email">
@@ -130,7 +130,7 @@
                     <?php _e( 'Stripe' ) ?>
                 </div>
 
-                <div class="settings__content accordion__content show">
+                <div class="settings__content accordion__content">
 
                     <div class="setting">
                         <label for="stripe-key">

@@ -503,16 +503,16 @@ $gray: #F5F5F5;
         min-height: calc(100vh - 245px);
         display: flex;
         gap: 10px;
-        @media(max-width: 768px) {
+        @media(max-width: 1440px) {
             flex-direction: column;
-            gap: 25px;
+            gap: 10px;
         }
     }
     &__sidebar {
         padding: 10px;
         border-radius: 5px;
         background-color: $white;
-        @media(max-width: 768px) {
+        @media(max-width: 1440px) {
             order: 1;
         }
     }
@@ -536,18 +536,20 @@ $gray: #F5F5F5;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        @media(max-width: 768px) {
+        @media(max-width: 1440px) {
             order: 2;
         }
     }
     &__default {
         padding: 10px;
         background-color: $white;
+        border-radius: 5px;
     }
     &__date {
         margin-bottom: 10px;
         padding: 10px;
         background-color: $white;
+        border-radius: 5px;
     }
     &__btn {
         margin-top: 10px;
@@ -621,6 +623,7 @@ $gray: #F5F5F5;
         padding: 10px;
         background-color: $white;
         margin-bottom: 10px;
+        border-radius: 5px;
     }
     &__title {
         font-size: 20px;
@@ -701,6 +704,7 @@ $gray: #F5F5F5;
         margin-bottom: 10px;
         background-color: $white;
         padding: 10px;
+        border-radius: 5px;
         b &:last-child {
             margin-bottom: 0;
         }

@@ -607,13 +607,13 @@
   display: flex;
   gap: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .pricing__body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 25px;
+    gap: 10px;
   }
 }
 .pricing__sidebar {
@@ -621,7 +621,7 @@
   border-radius: 5px;
   background-color: white;
 }
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .pricing__sidebar {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -655,7 +655,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .pricing__prices {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -665,11 +665,13 @@
 .pricing__default {
   padding: 10px;
   background-color: white;
+  border-radius: 5px;
 }
 .pricing__date {
   margin-bottom: 10px;
   padding: 10px;
   background-color: white;
+  border-radius: 5px;
 }
 .pricing__btn {
   margin-top: 10px;
@@ -756,6 +758,7 @@
   padding: 10px;
   background-color: white;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 .settings__title {
   font-size: 20px;
@@ -846,6 +849,7 @@
   margin-bottom: 10px;
   background-color: white;
   padding: 10px;
+  border-radius: 5px;
 }
 b .analytics__chart:last-child {
   margin-bottom: 0;
