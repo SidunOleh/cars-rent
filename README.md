@@ -3,7 +3,7 @@
 ### Rent process
 Choose car ➡ Choose start date and hour ➡ Choose rent time ➡ Pay(Stripe)
 
-### Admin Panel
+### Admin panel
 ![alt text](https://github.com/SidunOleh/cars-rent/blob/main/includes/storage/img/admin-orders.png?raw=true)
 ![alt text](https://github.com/SidunOleh/cars-rent/blob/main/includes/storage/img/admin-latest.png?raw=true)
 ![alt text](https://github.com/SidunOleh/cars-rent/blob/main/includes/storage/img/admin-pricing.png?raw=true)
