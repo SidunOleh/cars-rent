@@ -1,0 +1,64 @@
+// colors
+$orange: rgb(255 115 15);
+$gray: #F5F5F5;
+$white: white;
+//===========================================================================================================//
+.calendar {
+    font-size: 16px;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: $gray;
+    }
+    &__week {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        span {
+            text-align: center;
+        }
+    }
+    &__days {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        span {
+            padding: 7px;
+            text-align: center;
+            background-color: $gray;
+        }
+    }
+    .arr {
+        color: #000000;
+        cursor: pointer;
+        user-select: none;
+    }
+    .prev {}
+    .date {}
+    .month {}
+    .year {}
+    .next {}
+    .curr-day {
+        cursor: pointer;
+        &:hover {
+            background-color: $orange;
+            color: $white;
+        }
+        &.selected {
+            background-color: $orange;
+            color: $white;
+        }
+    }
+    .prev-day {
+        background-color: $white;
+    }
+    .next-day {
+        background-color: $white;
+    }
+    .unavailable {
+        background-color: bisque;
+    }
+}
