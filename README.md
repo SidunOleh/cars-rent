@@ -11,4 +11,4 @@ Choose car ➡ Choose start date and hour ➡ Choose rent time ➡ Pay(Stripe)
 ![alt text](https://github.com/SidunOleh/cars-rent/blob/main/includes/storage/img/admin-settings.png?raw=true)
 
 ### Client side
-![alt text](https://github.com/SidunOleh/cars-rent/blob/main/includes/storage/img/client-car-page.png?raw=true)
+![alt text](https://github.com/SidunOleh/cars-rent/blob/main/includes/storage/img/client-side.png?raw=true)
