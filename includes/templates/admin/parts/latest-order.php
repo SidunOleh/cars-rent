@@ -18,12 +18,12 @@
 
         <div class="latest-order__date start">
             <span><?php _e( 'Rent start' ) ?>:</span>  
-            <?php echo ( datetime( $order->start ) )->format( 'M d, Y H:i' ) ?>
+            <mark><?php echo ( datetime( $order->start ) )->format( 'M d' ) ?></mark><?php echo ( datetime( $order->start ) )->format( ', Y H:i' ) ?>
         </div>
 
         <div class="latest-order__date end">
             <span><?php _e( 'Rent end' ) ?>:</span> 
-            <?php echo ( datetime( $order->end ) )->format( 'M d, Y H:i' ) ?>
+            <mark><?php echo ( datetime( $order->end ) )->format( 'M d' ) ?></mark><?php echo ( datetime( $order->end ) )->format( ', Y H:i' ) ?>
         </div>
 
         <div class="latest-order__car">

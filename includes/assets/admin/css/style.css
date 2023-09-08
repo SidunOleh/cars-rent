@@ -461,6 +461,10 @@
   font-size: 17px;
   font-weight: 600;
 }
+.latest-order mark {
+  background-color: bisque;
+  padding: 3px;
+}
 
 #add-order-popup .form {
   display: -webkit-box;
