@@ -90,24 +90,30 @@
                     <?php _e( 'Please read and confirm' ) ?> 
                     <span class="red">*</span>
                 </p>
-                
-                <?php if ( $options = carbon_get_the_post_meta( 'rent_options' ) ): ?>
+
+                <?php 
+                $options = carbon_get_the_post_meta( 'rent_options' );
+                foreach ( $options as $option ):
+                ?>
+                <p class="card-title">
+                    <?php echo $option[ 'title' ] ?>
+                </p>
                 <div class="characteristics">
-                    <select name="options[0]" form="rent-form">
+                    <select name="options[<?php echo $option[ 'title' ] ?>]" form="rent-form">
                         <?php
-                        foreach ( $options as $option ):
+                        foreach ( $option[ 'option' ] as $item ):
                         ?>
-                        <option value="<?php echo $option[ 'text' ] ?>">
-                            <?php echo $option[ 'text' ] ?>
+                        <option value="<?php echo $item[ 'item' ] ?>">
+                            <?php echo $item[ 'item' ] ?>
                         </option>
                         <?php endforeach ?>
                     </select>
                 </div>
-                <?php endif ?>
 
                 <p class="text">
-                    So by colonel hearted ferrars. Draw from upon here gone add one. He in sportsman household otherwise it perceived instantly. Is inquiry no he several excited am. Called though excuse length ye needed it he having.
+                    <?php echo $option[ 'text' ] ?>
                 </p>
+                <?php endforeach ?>
                 
                 <div class="confirm-rules column">
                     <p class="text">

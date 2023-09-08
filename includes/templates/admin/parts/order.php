@@ -63,17 +63,17 @@
 
         <div class="order__expand">
 
+            <?php foreach ( json_decode( $order->options, true ) as $name => $val ): ?>
+            <div class="order__options">
+                <span><?php esc_html_e( $name ) ?>:</span>
+                <?php esc_html_e( $val ) ?>
+            </div>
+            <?php endforeach ?>
+
             <?php if ( $order->comment ): ?>
             <div class="order__comment">
                 <span><?php _e( 'Comment' ) ?>:</span>
                 <?php esc_html_e( $order->comment ) ?>
-            </div>
-            <?php endif ?>
-
-            <?php if ( $order->options ): ?>
-            <div class="order__options">
-                <span><?php _e( 'Options' ) ?>:</span>
-                <?php esc_html_e( implode( ', ', json_decode( $order->options, true ) ) ) ?>
             </div>
             <?php endif ?>
 

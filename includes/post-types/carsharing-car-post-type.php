@@ -84,7 +84,12 @@ class Carsharing_Car_Post_Type extends Carsharing_Post_Type
             ->add_tab( __( 'Options' ), [
                 Field::make( 'complex', 'rent_options', __( 'Rent options ' ) )
                     ->add_fields( [
-                        Field::make( 'text', 'text', __( 'Option' ) ),
+                        Field::make( 'text', 'title', __( 'Option title' ) ),
+                        Field::make( 'rich_text', 'text', __( 'Option text' ) ),
+                        Field::make( 'complex', 'option', __( 'Option ' ) )
+                            ->add_fields( [
+                                Field::make( 'text', 'item', __( 'Item' ) ),
+                            ] ),
                     ] ),
             ] );
     }
