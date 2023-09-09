@@ -121,7 +121,7 @@
                 ?>
                 <div class="confirm-rules column">
                     <p class="text">
-                        <?php echo $rule ?>
+                        <?php echo $rule[ 'text' ] ?>
                     </p>
                     <div>
                         <input 
