@@ -20,10 +20,10 @@
             </p>
 
             <div class="info-btn">
-                <a href="#" class="btn">
+                <a href="#rent" class="btn">
                     <?php _e( 'Rent a car' ) ?>
                 </a>
-                <a href="#" class="btn gallery">
+                <a href="<?php echo get_the_permalink( 37 ) ?>" class="btn gallery">
                     <img src="<?php echo plugin_dir_url( CARSHARING_ROOT . '/carsharing.php' )  ?>/includes/assets/public/img/gallery.svg" alt="" />
                     <?php _e( 'View photos' ) ?>
                 </a>
@@ -142,7 +142,7 @@
 
         </div>
 
-        <div class="right">
+        <div class="right" id="rent">
 
             <p class="section-title">
                 <?php _e( 'Fill out the form to rent a car.' ) ?>
