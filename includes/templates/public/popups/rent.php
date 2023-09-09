@@ -115,10 +115,13 @@
                 </p>
                 <?php endforeach ?>
                 
+                <?php
+                $rules = carbon_get_the_post_meta( 'rules' );
+                foreach ( $rules as $rule ):
+                ?>
                 <div class="confirm-rules column">
                     <p class="text">
-                        So by colonel hearted ferrars. Draw from upon here gone add one. He in sportsman household otherwise it perceived instantly. Is inquiry no he several excited am. Called though excuse length ye needed it he having. Whatever throwing we on resolved entrance
-                        together graceful. Mrs assured add private married removed believe did she.Day handsome addition horrible sensible goodness two contempt.
+                        <?php echo $rule ?>
                     </p>
                     <div>
                         <input 
@@ -131,45 +134,18 @@
                         <label 
                             for="checkbox-1" 
                             class="checkbox-custom-label">
-                            I agree with rules
+                            <?php _e( 'I agree with rules' ) ?>
                         </label>
                     </div>
                 </div>
-
-                <div class="confirm-rules column">
-                    <p class="text">
-                        So by colonel hearted ferrars. Draw from upon here gone add one.
-                        He in sportsman household otherwise it perceived instantly. Is
-                        inquiry no he several excited am. Called though excuse length ye
-                        needed it he having. Whatever throwing we on resolved entrance
-                        together graceful. Mrs assured add private married removed
-                        believe did she.Day handsome addition horrible sensible goodness
-                        two contempt.
-                    </p>
-                    <div>
-                        <input
-                        id="checkbox-2"
-                        class="checkbox-custom"
-                        name="checkbox-2"
-                        type="checkbox"
-                        form="rent-form"
-                        required/>
-                        <label 
-                        for="checkbox-2" 
-                        class="checkbox-custom-label">
-                        I agree with rules
-                        </label>
-                    </div>
-                </div>
+                <?php endforeach ?>
 
                 <div class="drop column">
                     <p class="card-title">
-                        So by colonel hearted ferrars.
+                        <?php echo carbon_get_the_post_meta( 'photo_title' ) ?>
                     </p>
                     <p class="text">
-                        So by colonel hearted ferrars. Draw from upon here gone add one.
-                        He in sportsman household otherwise it perceived instantly. Is
-                        inquiry no he several excited am.
+                        <?php echo carbon_get_the_post_meta( 'photo_text' ) ?>
                     </p>
                     <div class="drop-place column">
                         <p class="section-subtitle">
@@ -187,7 +163,7 @@
                             <label 
                                 for="file" 
                                 class="btn btn-tertiary js-labelFile">
-                                <img src="./img/file.svg" alt="" />
+                                <img src="<?php echo plugin_dir_url( CARSHARING_ROOT . '/carsharing.php' )  ?>/includes/assets/public/img/file.svg" alt="" />
                                 <span class="js-fileName">
                                     <?php _e( 'Choose a file' ) ?>
                                 </span>

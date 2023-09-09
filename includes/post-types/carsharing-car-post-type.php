@@ -91,6 +91,16 @@ class Carsharing_Car_Post_Type extends Carsharing_Post_Type
                                 Field::make( 'text', 'item', __( 'Item' ) ),
                             ] ),
                     ] ),
+            ] )
+            ->add_tab( __( 'Rules' ), [
+                Field::make( 'complex', 'rules', __( 'Rules' ) )
+                    ->add_fields( [
+                        Field::make( 'rich_text', 'text', __( 'Text' ) ),
+                    ] ),
+            ] )
+            ->add_tab( __( 'Photo' ), [
+                Field::make( 'text', 'photo_title', __( 'Title' ) ),
+                Field::make( 'rich_text', 'photo_text', __( 'Text' ) ),
             ] );
     }
 
