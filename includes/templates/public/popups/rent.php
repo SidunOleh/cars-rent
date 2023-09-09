@@ -86,11 +86,6 @@
 
             <div class="confirm column">
 
-                <p class="card-title">
-                    <?php _e( 'Please read and confirm' ) ?> 
-                    <span class="red">*</span>
-                </p>
-
                 <?php 
                 $options = carbon_get_the_post_meta( 'rent_options' );
                 foreach ( $options as $option ):
@@ -115,8 +110,13 @@
                 </p>
                 <?php endforeach ?>
                 
+                <?php if ( $rules = carbon_get_the_post_meta( 'rules' ) ): ?>
+                    <p class="card-title">
+                        <?php _e( 'Please read and confirm' ) ?> 
+                    <span class="red">*</span>
+                </p>
+                <?php endif ?>
                 <?php
-                $rules = carbon_get_the_post_meta( 'rules' );
                 foreach ( $rules as $rule ):
                 ?>
                 <div class="confirm-rules column">
