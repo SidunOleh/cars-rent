@@ -99,7 +99,7 @@
                         foreach ( $option[ 'option' ] as $item ):
                         ?>
                         <option value="<?php echo $item[ 'item' ] ?>">
-                            <?php echo $item[ 'item' ] ?>
+                            $<?php echo $item[ 'price' ] ?> - <?php echo $item[ 'item' ] ?>
                         </option>
                         <?php endforeach ?>
                     </select>

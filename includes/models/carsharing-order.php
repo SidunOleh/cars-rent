@@ -227,7 +227,10 @@ class Carsharing_Order extends Carsharing_Model
         }
 
         if ( isset( $data[ 'options' ] ) and is_array( $data[ 'options' ] ) ) {
-            $validated[ 'options' ] = json_encode( $data[ 'options' ] );
+            $validated[ 'options' ] 
+                = json_encode( $data[ 'options' ] );
+            $validated[ 'price' ] 
+                += $this->get_options_price( $data[ 'options' ], $data[ 'car_id' ] );
         }
 
         return $validated;
@@ -282,6 +285,26 @@ class Carsharing_Order extends Carsharing_Model
         ) )->faceDetect( $photo );
         
         return $result;
+    }
+
+    public function get_options_price( array $options, $car_id ): int
+    {
+        $price = 0;
+
+        $all_options = carbon_get_post_meta( $car_id, 'rent_options' );
+        foreach ( $options as $name => $value ) {
+            foreach ( $all_options as $all_option ) {
+                if ( $all_option[ 'title' ] == $name ) {
+                    foreach ( $all_option[ 'option' ] as $item ) {
+                        if ( $item[ 'item' ] == $value ) {
+                            $price += $item[ 'price' ];
+                        }
+                    }
+                }
+            }
+        }
+
+        return $price;
     }
 
     public function get_slots( DateTimeImmutable $start, $car_id ): array

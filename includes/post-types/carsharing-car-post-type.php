@@ -89,6 +89,7 @@ class Carsharing_Car_Post_Type extends Carsharing_Post_Type
                         Field::make( 'complex', 'option', __( 'Option ' ) )
                             ->add_fields( [
                                 Field::make( 'text', 'item', __( 'Item' ) ),
+                                Field::make( 'text', 'price', __( 'Price($)' ) ),
                             ] ),
                     ] ),
             ] )
