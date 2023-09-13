@@ -24,7 +24,7 @@ class Carsharing_Stripe_Service
         $this->success_url = 
             admin_url( 'admin-ajax.php?action=stripe_success&session_id={CHECKOUT_SESSION_ID}' );
         $this->cancel_url = 
-            admin_url( 'admin-ajax.php?action=stripe_cancel' );
+            admin_url( 'admin-ajax.php?action=stripe_cancel&session_id={CHECKOUT_SESSION_ID}' );
 
         Stripe::setApiKey( $this->stripe_secret );
     }
