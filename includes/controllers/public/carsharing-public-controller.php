@@ -84,7 +84,7 @@ class Carsharing_Public_Controller extends Carsharing_Controller
             ->get_by_stripe_session_id( $session_id );
         Carsharing_Event_Service::trigger( 'order_payed', [ $order, ] );
 
-        $this->redirect( '/success' );
+        $this->redirect( "/success?order={$order->id}" );
     }
 
     public function stripe_cancel()
