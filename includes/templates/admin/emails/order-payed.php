@@ -130,8 +130,8 @@
         <![endif]-->
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
-                        <td align="center" valign="top" style="padding: 15px 12px;">
-                            <a href="https://www.blogdesire.com" target="_blank" style="display: inline-block;">
+                        <td align="center" valign="top" style="padding: 15px 12px;background:#d4dadf;">
+                            <a href="<?php echo get_the_permalink( $order->car_id ) ?>" target="_blank" style="display: inline-block;">
                                 <img src="<?php echo get_the_post_thumbnail_url( $order->car_id, 'full' ) ?>" alt="" border="0" width="100" style="display: block; width: 200px; max-width: 200px; min-width: 200px;">
                             </a>
                         </td>
