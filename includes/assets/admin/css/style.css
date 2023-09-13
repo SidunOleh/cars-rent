@@ -640,8 +640,7 @@
   background-color: #dcd9d960 !important;
 }
 .pricing__car:hover {
-  background-color: #bfbebe !important;
-  color: white;
+  background-color: #dcd9d960 !important;
 }
 .pricing__prices {
   -webkit-box-flex: 1;
