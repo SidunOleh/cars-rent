@@ -3,8 +3,8 @@
  */
 //date
 $(document).on(
-    'click', 
-    '.curr-day.unavailable', 
+    'click',
+    '.curr-day.unavailable',
     e => e.stopImmediatePropagation()
 )
 const rentCalendar = new Calendar({
@@ -23,30 +23,30 @@ const rentCalendar = new Calendar({
                 day: 'numeric',
             })
         )
-        
+
         // unselect hour
         $('.time-variants-item').removeClass('selected')
         selectedHour = null
-        // disable hours
+            // disable hours
         $('.time-variants-item').each((i, hourItem) => {
-            const hour =
-                `${date.year}-${date.month + 1}-${date.day}` +
-                ' ' +
-                $(hourItem).attr('data-hour')
-            if (
-                new Date(hour) < new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }))
-            ) {
-                $(hourItem).addClass('dissabled')
-            } else {
-                $(hourItem).removeClass('dissabled')
-            }
-        })
-        // show hours
+                const hour =
+                    `${date.year}-${date.month + 1}-${date.day}` +
+                    ' ' +
+                    $(hourItem).attr('data-hour')
+                if (
+                    new Date(hour) < new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }))
+                ) {
+                    $(hourItem).addClass('dissabled')
+                } else {
+                    $(hourItem).removeClass('dissabled')
+                }
+            })
+            // show hours
         $('.time-select').removeClass('_hidden')
 
         // hide slots
         $('.hours').addClass('_hidden')
-        // hide popup btn
+            // hide popup btn
         $('.next-step').addClass('_hidden')
 
         setTimeout(() => loading(false, '.rent-info .right'), 500)
@@ -107,11 +107,26 @@ function renderSlots(slotsHtml) {
     $('.next-step').addClass('_hidden')
 }
 
+const price = new Proxy({
+    total: 0,
+}, {
+    set(obj, key, val) {
+        obj[key] = parseInt(val)
+        $('.next-step-popup')
+            .find('.total-amount')
+            .text('$' + obj[key])
+    },
+})
+
 function chooseSlot(e) {
     $('.next-step-popup').find('.selected-time')
         .text($(e.target).attr('data-time'))
-    $('.next-step-popup').find('.total-amount')
-        .text('$' + $(e.target).attr('data-price'))
+    let optionsPrice = 0
+    $('.characteristics select').each((i, select) => {
+        const selected = $(select).find('option:selected')
+        optionsPrice += parseInt(selected.attr('data-price'))
+    })
+    price.total = parseInt($(e.target).attr('data-price')) + optionsPrice
     $('.next-step').removeClass('_hidden')
 }
 
@@ -131,6 +146,25 @@ function closeRentPopup(e) {
 }
 
 $('.next-step-popup .close').click(closeRentPopup)
+
+// change options
+let prev = 0;
+
+function focusOptions(e) {
+    const selected = $(e.target).find('option:selected')
+    prev = parseInt(selected.attr('data-price'))
+}
+
+function changeOptions(e) {
+    const selected = $(e.target).find('option:selected')
+    price.total -= prev
+    price.total += parseInt(selected.attr('data-price'))
+    prev = parseInt(selected.attr('data-price'))
+}
+
+$('.characteristics select').focus(focusOptions)
+$('.characteristics select').change(changeOptions)
+
 
 // make order
 function makeOrder(e) {

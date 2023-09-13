@@ -98,7 +98,10 @@
                         <?php
                         foreach ( $option[ 'option' ] as $item ):
                         ?>
-                        <option value="<?php echo $item[ 'item' ] ?>">
+                        <option 
+                            value="<?php echo $item[ 'item' ] ?>" 
+                            data-price="<?php echo $item[ 'price' ] ?>"
+                            data-option="<?php echo $option[ 'title' ] ?>">
                             $<?php echo $item[ 'price' ] ?> - <?php echo $item[ 'item' ] ?>
                         </option>
                         <?php endforeach ?>
