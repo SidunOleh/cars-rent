@@ -200,6 +200,14 @@ function getLatest(e) {
 $(document).on('click', '.latest .pag__arrow:not(.disable)', getLatest)
 $(document).on('click', '.tabs__heading[data-target=latest]:not(.loaded)', getLatest)
 
+// show more
+function showMore(e) {
+    const order = $(e.currentTarget).closest('.order-item')
+    order.toggleClass('show-more')
+}
+
+$(document).on('click', '.more', showMore)
+
 
 /**
  * Pricing
