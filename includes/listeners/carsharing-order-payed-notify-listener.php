@@ -13,12 +13,12 @@ class Carsharing_Order_Payed_Notify_Listener
 
         wp_mail(
             get_carsharing_option( 'notification_email' ) ?: get_option( 'admin_email' ),
-            __( 'Order Payed' ),
+            _e( 'Order payed' ) . ' | ' . get_bloginfo( 'name' ),
             $message
         );
         wp_mail(
             $order->client_email,
-            __( 'Order Payed' ),
+            _e( 'Order payed' ) . ' | ' . get_bloginfo( 'name' ),
             $message
         );
     }

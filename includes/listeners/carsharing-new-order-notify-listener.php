@@ -13,12 +13,12 @@ class Carsharing_New_Order_Notify_Listener
 
         wp_mail(
             get_carsharing_option( 'notification_email' ) ?: get_option( 'admin_email' ),
-            __( 'New Order' ),
+            _e( 'Order' ) . ' | ' . get_bloginfo( 'name' ),
             $message
         );
         wp_mail(
             $order->client_email,
-            __( 'New Order' ),
+            _e( 'Order' ) . ' | ' . get_bloginfo( 'name' ),
             $message
         );
     }
