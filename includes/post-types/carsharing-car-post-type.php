@@ -48,6 +48,9 @@ class Carsharing_Car_Post_Type extends Carsharing_Post_Type
                 Field::make( 'text', 'first_title', __( 'Title' ) ),
                 Field::make( 'rich_text', 'first_text', __( 'Text' ) ),
             ] )
+            ->add_tab( __( 'Gallery' ), [
+                Field::make( 'media_gallery', 'gallery', __( 'Gallery' ) ),
+            ] )
             ->add_tab( __( 'Description' ), [
                 Field::make( 'text', 'desc_title', __( 'Title' ) ),
                 Field::make( 'rich_text', 'desc_text', __( 'Text' ) ),

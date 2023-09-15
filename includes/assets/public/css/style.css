@@ -173,6 +173,38 @@ button {
     color: #000;
 }
 
+.hero .info-btn .gallery-btn-open {
+    position: relative;
+    width: 100%;
+}
+
+.hero .info-btn .gallery-btn-open p {
+    height: 53px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-right: 16px;
+    width: 100%;
+    background-color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.hero .info-btn .gallery-btn-open img {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
 .hero .options-price {
     width: -webkit-fit-content;
     width: -moz-fit-content;

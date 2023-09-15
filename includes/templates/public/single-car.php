@@ -23,12 +23,26 @@
                 <a href="#rent" class="btn">
                     <?php _e( 'Rent a car' ) ?>
                 </a>
-                <a href="<?php echo get_the_permalink( 37 ) ?>" class="btn gallery">
+                <div class="gallery-btn-open">
+                    <p data-fancybox-trigger="car-gallery">
+                        <?php _e( 'View photos' ) ?>
+                    </p>
                     <img src="<?php echo plugin_dir_url( CARSHARING_ROOT . '/carsharing.php' )  ?>/includes/assets/public/img/gallery.svg" alt="" />
-                    <?php _e( 'View photos' ) ?>
-                </a>
+                </div>
             </div>
 
+        </div>
+
+        <div class="car-gallery" style="display: none">
+            <?php
+            $gallery = carbon_get_the_post_meta( 'gallery' );
+            foreach ( $gallery as $img ):
+            ?>
+            <a 
+                href="<?php echo wp_get_attachment_image_url( $img, 'full' ) ?>" 
+                data-fancybox="car-gallery">
+            </a>
+            <?php endforeach ?>
         </div>
 
         <div class="options-price">
